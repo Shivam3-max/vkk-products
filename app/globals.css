@@ -1,0 +1,309 @@
+@import "tailwindcss";
+
+/* ============================================================
+   VKK PRODUCTS — Design System
+   Navy + Orange on White. "Protecting Products, Building Trust."
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --navy: #14245c;        /* deep navy — primary */
+  --navy-2: #1c2f6e;
+  --navy-3: #0e1a45;      /* darkest, footers */
+  --orange: #f2921d;      /* brand orange */
+  --orange-2: #ff9f2e;
+  --orange-3: #d97b0a;    /* pressed / accents */
+
+  /* Neutrals — white background site */
+  --white: #ffffff;
+  --paper: #fbfbfd;       /* faint off-white section bg */
+  --paper-2: #f4f6fb;     /* cool light panel */
+  --kraft: #c8955c;       /* corrugated kraft tone for accents */
+  --kraft-2: #e7cba6;
+
+  --ink: #131a2e;         /* body text (navy-black) */
+  --ink-2: #4a5468;       /* secondary text */
+  --ink-3: #8a93a6;       /* muted */
+  --line: #e6e9f2;        /* hairline */
+  --line-2: #d6dbe8;      /* stronger hairline */
+
+  --ok: #16a34a;
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px rgba(20, 36, 92, 0.06), 0 1px 3px rgba(20, 36, 92, 0.05);
+  --shadow-md: 0 4px 16px rgba(20, 36, 92, 0.08), 0 2px 6px rgba(20, 36, 92, 0.05);
+  --shadow-lg: 0 18px 48px rgba(20, 36, 92, 0.14), 0 4px 12px rgba(20, 36, 92, 0.06);
+  --shadow-orange: 0 10px 30px rgba(242, 146, 29, 0.28);
+
+  --radius: 14px;
+  --maxw: 1200px;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy2: var(--navy-2);
+  --color-navy3: var(--navy-3);
+  --color-orange: var(--orange);
+  --color-orange2: var(--orange-2);
+  --color-orange3: var(--orange-3);
+  --color-white: var(--white);
+  --color-paper: var(--paper);
+  --color-paper2: var(--paper-2);
+  --color-kraft: var(--kraft);
+  --color-kraft2: var(--kraft-2);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink-2);
+  --color-ink3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line2: var(--line-2);
+  --font-sans: var(--font-plus-jakarta);
+  --font-display: var(--font-archivo);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+::selection {
+  background: var(--orange);
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-archivo), var(--font-plus-jakarta), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--navy);
+  margin: 0;
+}
+
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+@media (max-width: 640px) {
+  .container { padding-inline: 18px; }
+}
+
+.section {
+  padding-block: clamp(56px, 8vw, 110px);
+}
+
+/* ---------- Eyebrow / kicker ---------- */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-archivo), sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange3);
+}
+.kicker::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: var(--font-archivo), sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  padding: 13px 24px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: var(--shadow-orange);
+}
+.btn-primary:hover {
+  background: var(--orange3);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(242, 146, 29, 0.36);
+}
+
+.btn-navy {
+  background: var(--navy);
+  color: #fff;
+}
+.btn-navy:hover {
+  background: var(--navy-2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--line-2);
+}
+.btn-ghost:hover {
+  border-color: var(--navy);
+  background: var(--paper-2);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--navy);
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--kraft-2);
+}
+
+/* ---------- Chips / tags ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--navy);
+  border: 1px solid var(--line);
+}
+.chip-orange {
+  background: color-mix(in srgb, var(--orange) 14%, #fff);
+  color: var(--orange3);
+  border-color: color-mix(in srgb, var(--orange) 26%, #fff);
+}
+
+/* ---------- Decorative ---------- */
+.dotgrid {
+  background-image: radial-gradient(var(--orange) 1.4px, transparent 1.4px);
+  background-size: 16px 16px;
+  opacity: 0.9;
+}
+.text-gradient {
+  background: linear-gradient(100deg, var(--orange) 0%, var(--orange-3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* corrugated flute texture (for accents / dividers) */
+.flute {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--kraft-2) 0px,
+    var(--kraft-2) 2px,
+    color-mix(in srgb, var(--kraft) 55%, #fff) 2px,
+    color-mix(in srgb, var(--kraft) 55%, #fff) 9px
+  );
+}
+
+.hairline { height: 1px; background: var(--line); border: 0; }
+
+/* ---------- Reveal animation ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Marquee ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* ---------- Range input (tools) ---------- */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line-2);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(242, 146, 29, 0.5);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+/* ---------- Utility ---------- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
