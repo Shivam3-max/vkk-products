@@ -3,6 +3,8 @@ import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
 import BoxCSS from "@/components/BoxCSS";
 import { SectionHeading, CTABand, Stat, DotBlock } from "@/components/UI";
+import FAQ from "@/components/FAQ";
+import { processSteps } from "@/data/faqs";
 import { products } from "@/data/products";
 import { industries } from "@/data/industries";
 import { machinery, productionAdvantages } from "@/data/machinery";
@@ -262,6 +264,44 @@ export default function Home() {
               "{site.promise.split(",")[0]},<span className="text-orange"> {site.promise.split(",").slice(1).join(",")}"</span>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ============ PROCESS ============ */}
+      <section className="section">
+        <div className="container">
+          <SectionHeading center kicker="How We Work" title="From your brief to your" accent="dispatch." sub="A simple, transparent path from first enquiry to delivered boxes — no guesswork, no surprises." />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-12">
+            {processSteps.map((s, i) => (
+              <Reveal key={s.n} delay={i * 70}>
+                <div className="relative h-full">
+                  <div className="card card-hover p-6 h-full">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="w-12 h-12 rounded-xl bg-navy text-orange grid place-items-center"><Icon name={s.icon} className="w-6 h-6" /></span>
+                      <span className="font-display font-extrabold text-line2 text-[30px] leading-none">{s.n}</span>
+                    </div>
+                    <h3 className="text-[16px]">{s.title}</h3>
+                    <p className="mt-2 text-[13.5px] text-ink2 leading-relaxed">{s.desc}</p>
+                  </div>
+                  {i < processSteps.length - 1 && (
+                    <span className="hidden lg:grid absolute top-11 -right-3 z-10 w-6 h-6 place-items-center text-orange">
+                      <Icon name="arrow" className="w-5 h-5" />
+                    </span>
+                  )}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ FAQ ============ */}
+      <section className="section bg-paper">
+        <div className="container">
+          <SectionHeading center kicker="Questions & Answers" title="Everything you need to" accent="know." sub="The practical stuff — MOQ, samples, lead times and how quoting works. Still unsure? Just ask us." />
+          <div className="mt-12">
+            <FAQ />
+          </div>
         </div>
       </section>
 

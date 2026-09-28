@@ -49,7 +49,7 @@ export default function StrengthAdvisor() {
       <div className="rounded-[22px] bg-navy text-white p-6 md:p-7 relative overflow-hidden flex flex-col">
         <div className="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-orange/15 blur-3xl" />
         <div className="relative">
-          <span className="chip chip-orange">Recommended board</span>
+          <span className="chip chip-dark">Recommended board</span>
           <div className="mt-4 font-display font-extrabold text-[26px] leading-tight">{rec.ply}</div>
           <p className="text-white/70 text-[14px] mt-2 leading-relaxed">{rec.note}</p>
 

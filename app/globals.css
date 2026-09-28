@@ -64,37 +64,42 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-}
+/* Base element styles live in @layer base so Tailwind utilities
+   (e.g. text-white on a heading in a dark section) always win. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-body {
-  background: var(--white);
-  color: var(--ink);
-  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-  margin: 0;
-}
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    margin: 0;
+    line-height: 1.6;
+  }
 
-::selection {
-  background: var(--orange);
-  color: #fff;
-}
+  ::selection {
+    background: var(--orange);
+    color: #fff;
+  }
 
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-archivo), var(--font-plus-jakarta), sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  color: var(--navy);
-  margin: 0;
-}
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-archivo), var(--font-plus-jakarta), sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    color: var(--navy);
+    margin: 0;
+  }
 
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
+  p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+}
 
 /* ---------- Layout helpers ---------- */
 .container {
@@ -215,9 +220,15 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--line);
 }
 .chip-orange {
-  background: color-mix(in srgb, var(--orange) 14%, #fff);
+  background: color-mix(in srgb, var(--orange) 16%, #fff);
   color: var(--orange3);
-  border-color: color-mix(in srgb, var(--orange) 26%, #fff);
+  border-color: color-mix(in srgb, var(--orange) 30%, #fff);
+}
+/* chip for use on navy / dark backgrounds */
+.chip-dark {
+  background: color-mix(in srgb, var(--orange) 22%, transparent);
+  color: var(--orange-2);
+  border-color: color-mix(in srgb, var(--orange) 40%, transparent);
 }
 
 /* ---------- Decorative ---------- */

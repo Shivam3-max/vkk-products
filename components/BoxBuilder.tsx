@@ -175,7 +175,7 @@ export default function BoxBuilder() {
           </div>
         </div>
         <p className="text-[11.5px] text-ink3 mt-2">
-          Add your box to the enquiry and we'll come back with a firm, competitive per-box price and lead time.
+          Add your box to the enquiry — our team reviews your exact spec and replies with a firm quote and lead time. No automated pricing.
         </p>
 
         <button
@@ -186,7 +186,7 @@ export default function BoxBuilder() {
           className="btn btn-primary w-full mt-4"
         >
           <Icon name={added ? "check" : "plus"} className="w-5 h-5" />
-          {added ? "Added — configure another" : "Add to Enquiry & get a price"}
+          {added ? "Added — configure another" : "Add this box to Enquiry"}
         </button>
       </div>
     </div>

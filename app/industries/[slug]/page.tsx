@@ -63,7 +63,7 @@ export default async function IndustryDetail({ params }: { params: Promise<{ slu
               <div className="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-orange/15 blur-3xl" />
               <DotBlock className="absolute top-5 right-5" size={92} />
               <div className="relative">
-                <span className="chip chip-orange">Recommended for {ind.name}</span>
+                <span className="chip chip-dark">Recommended for {ind.name}</span>
                 <h3 className="mt-4 !text-white text-[21px] leading-tight">The right VKK products <span className="text-gradient">for this sector.</span></h3>
                 <div className="mt-6 space-y-3">
                   {ind.recommended.map((r) => {

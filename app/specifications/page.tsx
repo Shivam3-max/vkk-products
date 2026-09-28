@@ -132,7 +132,7 @@ export default function SpecificationsPage() {
                 <div className="rounded-2xl bg-white/[0.06] border border-white/10 p-6 h-full">
                   <div className="flex items-center justify-between">
                     <h3 className="!text-white text-[17px]">{q.name}</h3>
-                    <span className="chip chip-orange !py-1 text-[11.5px]">{q.unit}</span>
+                    <span className="chip chip-dark !py-1 text-[11.5px]">{q.unit}</span>
                   </div>
                   <div className="text-orange text-[12.5px] font-bold mt-1">{q.short}</div>
                   <p className="mt-2.5 text-white/65 text-[13.5px] leading-relaxed">{q.desc}</p>
