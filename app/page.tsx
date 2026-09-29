@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden">
         <div className="absolute right-0 top-0 h-full w-[46%] bg-navy hidden lg:block" style={{ clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0% 100%)" }} />
         <div className="absolute right-0 top-0 h-full w-[46%] hidden lg:block overflow-hidden" style={{ clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0% 100%)" }}>
           <div className="absolute -right-20 -top-24 w-96 h-96 rounded-full bg-orange/15 blur-3xl" />
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* ============ PLY EXPLAINER ============ */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container">
           <SectionHeading center kicker="The Technical Difference" title="Understand" accent="ply & strength." sub="More plies mean more fluted layers — and more strength. Here's how to match the board to your product." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* ============ WHY VKK ============ */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container">
           <SectionHeading center kicker="Why Choose VKK" title="Our competitive" accent="advantage." sub="Everything you need in a packaging partner — quality, capacity, customisation and dependable delivery." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
@@ -296,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* ============ FAQ ============ */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container">
           <SectionHeading center kicker="Questions & Answers" title="Everything you need to" accent="know." sub="The practical stuff — MOQ, samples, lead times and how quoting works. Still unsure? Just ask us." />
           <div className="mt-12">

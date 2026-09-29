@@ -48,6 +48,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${jakarta.variable} ${archivo.variable} antialiased`}>
+        {/* Ambient decorative orbs (behind content) */}
+        <div className="orbs" aria-hidden="true">
+          <span className="orb orb-a" />
+          <span className="orb orb-b" />
+          <span className="orb orb-c" />
+        </div>
         <RFQProvider>
           <Nav />
           <main>{children}</main>
@@ -55,6 +61,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <RFQDrawer />
           <WhatsAppFloat />
         </RFQProvider>
+        {/* Inset matte frame (above content) */}
+        <div className="page-frame" aria-hidden="true" />
       </body>
     </html>
   );

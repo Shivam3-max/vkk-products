@@ -81,7 +81,7 @@ export default function InfrastructurePage() {
       </section>
 
       {/* location + capacity */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container grid lg:grid-cols-2 gap-8 items-center">
           <Reveal>
             <span className="kicker">Our Location</span>

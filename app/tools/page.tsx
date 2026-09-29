@@ -35,7 +35,7 @@ export default function ToolsPage() {
       </section>
 
       {/* Strength Advisor */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container">
           <div className="mb-8">
             <SectionHeading kicker="Tool 02 · Strength Advisor" title="Not sure which board" accent="you need?" sub="Tell us how heavy your product is and how it ships. We'll recommend the ply, flute and GSM that protects it without over-spending." />

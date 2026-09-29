@@ -69,7 +69,7 @@ export default function SpecificationsPage() {
       </section>
 
       {/* FLUTES */}
-      <section id="flutes" className="section bg-paper scroll-mt-32">
+      <section id="flutes" className="section band scroll-mt-32">
         <div className="container">
           <SectionHeading kicker="02 · Flute Profiles" title="The waves that give" accent="strength." sub="The fluting is the wavy layer inside the board. Taller flutes cushion and stack better; finer flutes give a smoother print surface." />
           <Reveal className="mt-9 overflow-x-auto">

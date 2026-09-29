@@ -89,7 +89,7 @@ export default async function IndustryDetail({ params }: { params: Promise<{ slu
       </section>
 
       {/* other industries */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container">
           <div className="flex items-end justify-between mb-8">
             <h2 className="text-[clamp(22px,3vw,32px)]">Other industries</h2>

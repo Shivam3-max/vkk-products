@@ -58,7 +58,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
       </section>
 
       {/* features */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container">
           <span className="kicker">Why it works</span>
           <h2 className="mt-3 text-[clamp(24px,3.4vw,36px)] mb-9">Key features</h2>
@@ -135,7 +135,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
       </section>
 
       {/* other products */}
-      <section className="section bg-paper">
+      <section className="section band">
         <div className="container">
           <div className="flex items-end justify-between mb-8">
             <h2 className="text-[clamp(22px,3vw,32px)]">Explore more products</h2>

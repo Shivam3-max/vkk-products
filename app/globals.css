@@ -73,7 +73,6 @@
   }
 
   body {
-    background: var(--white);
     color: var(--ink);
     font-family: var(--font-plus-jakarta), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -81,7 +80,22 @@
     overflow-x: hidden;
     margin: 0;
     line-height: 1.6;
+    /* Soft base tint; the .orbs layer paints the coloured glows on top of this. */
+    background: linear-gradient(180deg, #f3f5fb 0%, #eaeef7 100%) fixed;
   }
+
+  /* Fine grain overlay — kills the flat "plastic" look. Static, pointer-safe. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
 
   ::selection {
     background: var(--orange);
@@ -114,6 +128,61 @@
 
 .section {
   padding-block: clamp(56px, 8vw, 110px);
+}
+
+/* ---------- Ambient orbs + matte frame ---------- */
+.orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+.orb-a {
+  width: 46vw; height: 46vw; max-width: 620px; max-height: 620px;
+  top: -12vw; left: -10vw;
+  background: radial-gradient(circle, color-mix(in srgb, var(--orange) 44%, transparent), transparent 68%);
+}
+.orb-b {
+  width: 44vw; height: 44vw; max-width: 600px; max-height: 600px;
+  top: 34vh; right: -14vw;
+  background: radial-gradient(circle, color-mix(in srgb, var(--navy) 34%, transparent), transparent 68%);
+}
+.orb-c {
+  width: 42vw; height: 42vw; max-width: 560px; max-height: 560px;
+  bottom: -14vw; left: 28vw;
+  background: radial-gradient(circle, color-mix(in srgb, var(--kraft) 40%, transparent), transparent 68%);
+}
+
+.page-frame {
+  position: fixed;
+  inset: 16px;
+  z-index: 70;
+  pointer-events: none;
+  border: 1.5px solid color-mix(in srgb, var(--navy) 20%, transparent);
+  border-radius: 24px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+@media (max-width: 640px) {
+  .page-frame { inset: 8px; border-radius: 16px; }
+}
+
+/* Translucent framed band — lets the ambient background glow through,
+   with hairline top/bottom rules so sections read as framed panels. */
+.band {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(248, 250, 253, 0.86));
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1px 0 var(--line) inset, 0 -1px 0 var(--line-2);
+}
+/* A cleaner near-white band for high-contrast content areas */
+.band-clear {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.74));
 }
 
 /* ---------- Eyebrow / kicker ---------- */
@@ -194,16 +263,21 @@
 
 /* ---------- Cards ---------- */
 .card {
-  background: #fff;
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #fcfcfe 100%);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border-radius: 16px;
+  box-shadow:
+    0 1px 2px rgba(20, 36, 92, 0.04),
+    0 10px 26px -12px rgba(20, 36, 92, 0.16);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--kraft-2);
+  transform: translateY(-5px);
+  box-shadow:
+    0 2px 4px rgba(20, 36, 92, 0.05),
+    0 26px 50px -16px rgba(20, 36, 92, 0.26);
+  border-color: color-mix(in srgb, var(--orange) 32%, #fff);
 }
 
 /* ---------- Chips / tags ---------- */
