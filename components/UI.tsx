@@ -72,8 +72,9 @@ export function PageHero({
   breadcrumb?: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy text-white">
-      <div className="absolute -right-32 -top-32 w-[28rem] h-[28rem] rounded-full bg-orange/15 blur-3xl" />
+    <section className="grid-dark relative overflow-hidden bg-navy text-white">
+      <div className="absolute -right-32 -top-32 w-[28rem] h-[28rem] rounded-full bg-orange/20 blur-3xl" />
+      <div className="absolute -left-24 bottom-0 w-96 h-96 rounded-full bg-orange/10 blur-3xl" />
       <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-navy3/50" style={{ clipPath: "polygon(30% 0,100% 0,100% 100%,0 100%)" }} />
       <DotBlock className="absolute top-7 right-7 hidden md:block" />
       <div className="container relative py-16 md:py-20">
@@ -112,7 +113,7 @@ export function CTABand({
   return (
     <section className="section">
       <div className="container">
-        <Reveal className="relative overflow-hidden rounded-[26px] bg-navy text-white px-8 md:px-14 py-14 md:py-16">
+        <Reveal className="grid-dark relative overflow-hidden rounded-[26px] bg-navy text-white px-8 md:px-14 py-14 md:py-16">
           <DotBlock className="absolute -top-4 right-8 hidden md:block" size={116} />
           <div className="absolute -left-16 -bottom-16 w-72 h-72 rounded-full bg-orange/25 blur-3xl" />
           <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">

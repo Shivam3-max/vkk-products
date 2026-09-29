@@ -2,6 +2,8 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
 import BoxCSS from "@/components/BoxCSS";
+import SectionNav from "@/components/SectionNav";
+import Leadership from "@/components/Leadership";
 import { SectionHeading, CTABand, Stat, DotBlock } from "@/components/UI";
 import FAQ from "@/components/FAQ";
 import { processSteps } from "@/data/faqs";
@@ -14,8 +16,9 @@ import { site, stats, whyChoose } from "@/data/site";
 export default function Home() {
   return (
     <>
+      <SectionNav />
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden">
+      <section id="top" className="relative overflow-hidden scroll-mt-24">
         <div className="absolute right-0 top-0 h-full w-[46%] bg-navy hidden lg:block" style={{ clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0% 100%)" }} />
         <div className="absolute right-0 top-0 h-full w-[46%] hidden lg:block overflow-hidden" style={{ clipPath: "polygon(18% 0, 100% 0, 100% 100%, 0% 100%)" }}>
           <div className="absolute -right-20 -top-24 w-96 h-96 rounded-full bg-orange/15 blur-3xl" />
@@ -95,7 +98,7 @@ export default function Home() {
       </div>
 
       {/* ============ PRODUCTS ============ */}
-      <section className="section">
+      <section id="products" className="section scroll-mt-24">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
             <SectionHeading kicker="Our Products" title="Complete packaging," accent="one partner." sub="From single-wall shippers to triple-wall industrial crates — engineered to your product, printed with your brand." />
@@ -153,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* ============ TOOLS CTA ============ */}
-      <section className="section">
+      <section id="tools" className="section scroll-mt-24">
         <div className="container">
           <Reveal className="relative overflow-hidden rounded-[26px] border border-line bg-gradient-to-br from-white to-paper2 p-8 md:p-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -192,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* ============ INDUSTRIES ============ */}
-      <section className="section bg-navy text-white relative overflow-hidden">
+      <section id="industries" className="section grid-dark bg-navy text-white relative overflow-hidden scroll-mt-24">
         <div className="absolute -right-24 top-10 w-96 h-96 rounded-full bg-orange/10 blur-3xl" />
         <DotBlock className="absolute top-10 left-8 hidden md:block" color="text-white" />
         <div className="container relative">
@@ -214,7 +217,7 @@ export default function Home() {
       </section>
 
       {/* ============ MACHINERY ============ */}
-      <section className="section">
+      <section id="plant" className="section scroll-mt-24">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
             <SectionHeading kicker="Our Infrastructure" title="A 10-machine" accent="production line." sub="Advanced machinery, superior packaging. This is the plant behind every VKK box." />
@@ -245,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* ============ WHY VKK ============ */}
-      <section className="section band">
+      <section id="why" className="section band scroll-mt-24">
         <div className="container">
           <SectionHeading center kicker="Why Choose VKK" title="Our competitive" accent="advantage." sub="Everything you need in a packaging partner — quality, capacity, customisation and dependable delivery." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
@@ -267,8 +270,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ LEADERSHIP ============ */}
+      <Leadership />
+
       {/* ============ PROCESS ============ */}
-      <section className="section">
+      <section id="process" className="section scroll-mt-24">
         <div className="container">
           <SectionHeading center kicker="How We Work" title="From your brief to your" accent="dispatch." sub="A simple, transparent path from first enquiry to delivered boxes — no guesswork, no surprises." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-12">
@@ -296,7 +302,7 @@ export default function Home() {
       </section>
 
       {/* ============ FAQ ============ */}
-      <section className="section band">
+      <section id="faq" className="section band scroll-mt-24">
         <div className="container">
           <SectionHeading center kicker="Questions & Answers" title="Everything you need to" accent="know." sub="The practical stuff — MOQ, samples, lead times and how quoting works. Still unsure? Just ask us." />
           <div className="mt-12">

@@ -80,7 +80,7 @@ export default function AboutPage() {
       </section>
 
       {/* vision + mission */}
-      <section className="section bg-navy text-white relative overflow-hidden">
+      <section className="section grid-dark bg-navy text-white relative overflow-hidden">
         <div className="absolute right-1/2 -top-10 w-96 h-96 rounded-full bg-orange/10 blur-3xl" />
         <div className="container relative grid lg:grid-cols-2 gap-10">
           <Reveal>

@@ -41,7 +41,7 @@ export default function InfrastructurePage() {
       </section>
 
       {/* machinery grid */}
-      <section className="section bg-navy text-white relative overflow-hidden">
+      <section className="section grid-dark bg-navy text-white relative overflow-hidden">
         <div className="absolute -right-24 -top-16 w-80 h-80 rounded-full bg-orange/10 blur-3xl" />
         <DotBlock className="absolute top-10 right-8 hidden md:block" color="text-white" />
         <div className="container relative">

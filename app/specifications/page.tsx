@@ -121,7 +121,7 @@ export default function SpecificationsPage() {
       </section>
 
       {/* QUALITY */}
-      <section id="quality" className="section bg-navy text-white relative overflow-hidden scroll-mt-32">
+      <section id="quality" className="section grid-dark bg-navy text-white relative overflow-hidden scroll-mt-32">
         <div className="absolute -right-24 -top-16 w-80 h-80 rounded-full bg-orange/10 blur-3xl" />
         <DotBlock className="absolute top-10 right-8 hidden md:block" color="text-white" />
         <div className="container relative">

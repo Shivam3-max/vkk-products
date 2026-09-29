@@ -61,8 +61,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <RFQDrawer />
           <WhatsAppFloat />
         </RFQProvider>
-        {/* Inset matte frame (above content) */}
-        <div className="page-frame" aria-hidden="true" />
       </body>
     </html>
   );

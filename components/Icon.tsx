@@ -4,6 +4,17 @@ type Props = { name: string; className?: string; strokeWidth?: number };
 
 // Minimal, consistent line-icon set (stroke = currentColor).
 const paths: Record<string, React.ReactNode> = {
+  user: (
+    <>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 21c0-4 3.5-6 8-6s8 2 8 6" />
+    </>
+  ),
+  quote: (
+    <>
+      <path d="M9 7H5v5h4v-1c0 2-1 3-3 3M19 7h-4v5h4v-1c0 2-1 3-3 3" />
+    </>
+  ),
   box: (
     <>
       <path d="M21 8 12 3 3 8v8l9 5 9-5V8Z" />

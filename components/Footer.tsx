@@ -8,7 +8,7 @@ import { industries } from "@/data/industries";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy3 text-white/75">
+    <footer className="grid-dark relative overflow-hidden bg-navy3 text-white/75">
       {/* CTA strip */}
       <div className="flute h-1.5 w-full" />
       <div className="container py-14">
